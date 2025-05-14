@@ -1,5 +1,11 @@
 # Vimkurs
 
+## TODO
+- Sortieren
+- Aufgaben / Skript zu mitmachen
+- Setup
+- Zeiteinteilung
+
 ## Basics
 
 - was ist vim
