@@ -9,30 +9,28 @@
 ## Basics
 
 - was ist vim
-  - kurze History
-  - vi
-- Warnung Keyboard Layout
-- modes
-  - normal mode
-  - insert mode
-  - visual mode
-- h j k l
-- exit / save
-- operators: i a d x s c r o
-  - upper case Varianten
-  - ganze Line
-  - Wiederholungen
-  - ^$0
-- help
+  - TODO: kurze History
+- TODO: Warnung Keyboard Layout
+- visual-mode
 - text-objects
   - i, a
   - e,Bw,W,Klammern,s,p
   - help für mehr Infos
-- visual-mode
-- undo/ redo
+  - ^$0
+- undo / redo
+  - u
+  - ctrl-r
   - U
-- paste/ yank
 
+## Commands
+- :
+- w, e, q
+- help
+- substitution
+- range
+- !
+- set
+  - spell
 
 ## Advanced Navigation
 - :number
@@ -44,24 +42,21 @@
 - jumps
 - tags
 
-## Commands
-- :
-- w, e, q
-- substitution
-- !
-- set
-
+## Advanced Editing
+- << >>
+- J (join)
+- uU ~
+- registers
+- macros
+- grep
+- quickfix list, cdo, ...
 
 ## Multiple files
+- buffer
 - tabs
 - panes
 - windows
 
-## Advanced Editing
-- << >>
-- macros
-- grep
-- quickfix list, cdo, ...
 
 
 ## Plugins
@@ -69,8 +64,5 @@
 - examples: leap, surround
 - lsp, mason, etc
 - distros
-
-
-
 
 
