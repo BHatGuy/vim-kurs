@@ -1,6 +1,4 @@
-# Vimkurs
-
-## Basics
+# Basics
 Navigation mit
 - h: links
 - j: runter
@@ -14,7 +12,7 @@ Verlassen / Speichern:
 - :q
 - :q!
 
-## Modi
+# Modi
 
 Vim hat verschiedene Modi:
 
@@ -33,7 +31,7 @@ Vim hat verschiedene Modi:
   - Zum Ausführen von Kommandos (q, w, etc.)
   - Erreichbar mit :
 
-## Operatoren
+# Operatoren
 
 Es gibt viele verschiedene Operatoren. Hier eine Auswahl von häufig verwendeten:
 - i insert vor dem Cursor
@@ -46,13 +44,10 @@ Es gibt viele verschiedene Operatoren. Hier eine Auswahl von häufig verwendeten
 - o neue Zeile und anschließend insert
 - y Kopieren (yank)
 - p Einfügen (put / paste)
+- u undo
+- CTRL-r redo
 
-d und y  brauchen eine Richtung:
-- h j k l: ein Zeichen in entsprechende Richtung
-- 0: Anfang der Zeile
-- $: Ende der Zeile
-- ^: erstes nicht-leere Zeichen
-- (oder Textobjekt -> später mehr)
+d und y  brauchen eine Richtung (siehe Navigation).
 
 Die meisten Operatoren haben Varianten:
 - Uppercase Variante
@@ -64,7 +59,7 @@ Die meisten Operatoren haben Varianten:
 
 Ein Zahl vor einem Operator führt den Operator n mal aus. 3dl löscht nächsten drei Zeichen.
 
-Das letzt Kommando kann mit . wiederholt werden.
+Der letzte Operator kann mit . wiederholt werden.
 
 # Visual Mode
 
@@ -91,3 +86,60 @@ Ein a (around) vor dem Textobjekt wählt das Objekt mit Whitespace oder inklusiv
 Ein i (inner) vor dem Textobjekt wählt das Objekt ohne Whitespace oder nur den Teil in Klammern aus.
 
 Textobjekte können auch wie Kommandos wiederholt werden. Beispiel: d3w
+
+
+# Kommandos
+Der command line mode kann mit : geöffnet werden.
+
+TODO:
+- w, e, q
+- help
+- !
+- set
+  - spell
+  - Mouse
+  - number
+
+
+# Navigation
+
+## Word / Text object Motions
+Es kann auch anhand von Textobjekten navigiert werden.
+Um zwischen Wörtern zu springen gibt es folgende Möglichkeiten:
+
+- w W: springt zum nächsten Wortanfang
+- e E: springt zum nächsten Wortende
+- b B: springt zum vorherigen Wortanfang
+- ge gE: springt zum vorherigen Wortende
+- ( ): springt einen Satz nach vorne/hinten
+- { }: springt einen Paragraph nach vorne/hinten
+
+Wie immer auch wiederholbar: 3w
+
+## Horizontale Navigation
+
+- 0: Anfang der Zeile
+- $: Ende der Zeile
+- ^: erstes nicht-leere Zeichen
+- f F:
+- t T:
+- , ;: 
+
+## Vertikale Navigation
+
+- gg
+- G
+- :
+- %
+- relative numbers + jk
+
+## Marks
+
+## Jumplist
+
+# Suchen und Ersetzen
+
+## Suchen
+- /
+- "* #"
+
