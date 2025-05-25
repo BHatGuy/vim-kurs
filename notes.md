@@ -11,12 +11,6 @@
 - was ist vim
   - TODO: kurze History
 - TODO: Warnung Keyboard Layout
-- visual-mode
-- text-objects
-  - i, a
-  - e,Bw,W,Klammern,s,p
-  - help für mehr Infos
-  - ^$0
 - undo / redo
   - u
   - ctrl-r
@@ -31,8 +25,11 @@
 - !
 - set
   - spell
+  - Mouse
+  - number
 
 ## Advanced Navigation
+- w b e
 - :number
 - search
 - %
@@ -46,6 +43,9 @@
 - << >>
 - J (join)
 - uU ~
+- ctrl-x crtl-a
+- zz
+- spelling
 - registers
 - macros
 - grep

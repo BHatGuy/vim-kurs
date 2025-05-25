@@ -64,3 +64,30 @@ Die meisten Operatoren haben Varianten:
 
 Ein Zahl vor einem Operator führt den Operator n mal aus. 3dl löscht nächsten drei Zeichen.
 
+Das letzt Kommando kann mit . wiederholt werden.
+
+# Visual Mode
+
+Der Visual Mode wird zum Auswählen von Text benutzt.
+- v: kontinuierliche Auswahl
+- V: zeilenweise Auswahl
+- CTRL-V: Block-Auswahl
+
+Auf den Ausgewählten Bereich können dann Operatoren angewendet werden.
+
+# Textobjekte
+
+Textobjekte werden im Visual Mode oder nach einem Operator benutzt um Objekt auszuwählen oder den Operator auf das Objekt anzuwenden.
+
+Eine Auswahl an Textobjekten ist (:h text-objects für ein längere liste):
+- w/W: Wort
+- s: Satz
+- p: Paragraph
+- ()[]{}<>: Verschiedene Klammern
+- "'`: Verschiedene Quotes
+- t: Tags (<a></a>)
+
+Ein a (around) vor dem Textobjekt wählt das Objekt mit Whitespace oder inklusive Klammern aus.
+Ein i (inner) vor dem Textobjekt wählt das Objekt ohne Whitespace oder nur den Teil in Klammern aus.
+
+Textobjekte können auch wie Kommandos wiederholt werden. Beispiel: d3w
