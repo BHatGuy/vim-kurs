@@ -118,24 +118,43 @@ Wie immer auch wiederholbar: 3w
 
 ## Horizontale Navigation
 
-- 0: Anfang der Zeile
-- $: Ende der Zeile
-- ^: erstes nicht-leere Zeichen
-- f F:
-- t T:
-- , ;: 
+- 0: springt zum Anfang der Zeile
+- $: springt zum Ende der Zeile
+- ^: springt zum ersten nicht-leeren Zeichen
+- f F: springt auf das entsprechende Zeichen
+  - f nach rechts, F nach rechts
+- t T: springt vor das entsprechende Zeichen
+  - f nach rechts, F nach rechts
+- ; ,: wiederholt letztes t f T F
+  - ; in die selbe Richtung
+  - , in die andere Richtung
+
 
 ## Vertikale Navigation
 
-- gg
-- G
-- :
-- %
-- relative numbers + jk
+- gg: springt an den Anfang des Buffers
+- G: springt ans Ende des Buffers
+- ":<Zeilennummer>": springt in die entsprechende Zeile
+- %: Springt zum matching Zeichen. Zum Beispiel Klammern oder <a> </a>
+- Entfernung + j oder k
+  - Hilfreich: set relativenumber
 
 ## Marks
 
+Mit marks können Zeilen markiert werden, um zu ihnen springen zu können.
+
+- m + (a-zA-Z): setzt einen mark in der aktuellen Zeile
+  - a-z: kann nur aus der selben Datei angesprungen werden
+  - A-Z: kann von überall angesprungen werden
+- ': springt den gegeben mark an
+- Marks 0-9 sind die Positionen beim vorherigen schließen von Vim
+
 ## Jumplist
+
+Alle Sprünge werden in der jumplist aufgezeichnet:
+- CTRL-o: Springt zur vorherigen/älteren Position in den jumplist
+- CTRL-i: Springt zur nächsten/neueren Position in den jumplist
+- :ju : zeigt die jumplist an
 
 # Suchen und Ersetzen
 
