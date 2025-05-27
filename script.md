@@ -89,16 +89,18 @@ Textobjekte können auch wie Kommandos wiederholt werden. Beispiel: d3w
 
 
 # Kommandos
-Der command line mode kann mit : geöffnet werden.
+Der command line mode kann mit : geöffnet werden. Es gibt sehr viele Kommandos, unter anderem auch von Plugins.
+Hier nur ein paar Beispiele. Später kommen auch noch mehr dazu.
 
-TODO:
-- w, e, q
-- help
-- !
-- set
-  - spell
-  - Mouse
-  - number
+- e w wq q q!: wie gehabt
+- qa: Schließt alle Windows
+- h(elp): Ruft Hilfe zu angegebenem Thema auf
+- !: führt das angegebene Programm in der Shell aus
+- te(erminal): öffnet eine interaktive Shell oder führt ein Programm in einem eigenen Buffer aus
+- set: Setzt und liest Optionen
+  - Optionen können mit no abgeschaltet werden
+  - Optionen können mit ? ausgelesen werden
+  - z.B.: spell, mouse, number
 
 
 # Navigation
