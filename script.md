@@ -158,9 +158,23 @@ Alle Sprünge werden in der jumplist aufgezeichnet:
 - CTRL-i: Springt zur nächsten/neueren Position in den jumplist
 - :ju : zeigt die jumplist an
 
-# Suchen und Ersetzen
+# Suchen und Ersetzen (innerhalb eines Buffers)
 
 ## Suchen
-- /
-- "* #"
+- /: sucht vorwärts nach gegebenen Regex
+- ?: sucht rückwärts nach gegebenen Regex
+- *: sucht vorwärts nach dem Wort unterm Cursor
+  - im visual mode wird nach der ganze Auswahl gesucht
+- #: sucht rückwärts nach dem Wort unterm Cursor
+  - im visual mode wird nach der ganze Auswahl gesucht
+- n: wiederholt die letzte Suche
+- N: wiederholt die letzte Suche in die andere Richtung
+- :nohlsearch: Schaltet die Markierung der letzten Suche aus
 
+## Ersetzen
+
+- :%s/suche/ersetze(/gc...)
+  - % wählt den gesamten Buffer aus
+  - im visual mode kann in der Selektion ersetzt werden
+  - g: alle matches in einer Zeil
+  - c: jedes Ersetzen muss bestätigt werden

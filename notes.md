@@ -14,6 +14,8 @@
 
 
 ## Advanced Editing
+
+###
 - << >>
 - J (join)
 - uU ~
@@ -21,14 +23,22 @@
 - ctrl o
 - ctrl r
 - zz
+
+###
 - spelling
+
+###
 - registers
+
+###
 - macros
+
+###
 - grep
 - quickfix list, cdo, ...
 - bufdo
 
-## Multiple files
+### Multiple files
 - buffer
 - tabs
 - panes
