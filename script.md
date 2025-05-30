@@ -1,3 +1,12 @@
+
+# TODO
+- Aufgaben / Skript zu mitmachen
+- Zeiteinteilung
+- was ist vim
+  - TODO: kurze History
+- TODO: Warnung Keyboard Layout
+
+
 # Basics
 Navigation mit
 - h: links
@@ -178,3 +187,78 @@ Alle Sprünge werden in der jumplist aufgezeichnet:
   - im visual mode kann in der Selektion ersetzt werden
   - g: alle matches in einer Zeil
   - c: jedes Ersetzen muss bestätigt werden
+
+# Advanced Editing
+
+## Verschiedenes
+Verschiedene Operationen die ich häufiger benutze.
+
+- << >>: ändert Einrückung der Zeile
+  - Im visual mode nur < >
+- J: fügt nächste Zeile mit der aktuellen zusammen (join)
+  - behandelt Kommentare, Einrückung, Listen, ...
+  - auch im visual mode
+- u U ~: Verändert Groß- und Kleinschreibung
+  - u: Lowercase
+  - U: Uppercase
+  - ~: toggle
+- CTRL-x CTRL-a: dekrementiert / inkrementiert die Zahl unter dem Cursor
+  - g CTRL-a: zählt visual mode mehrere Zahlen nacheinander
+- CTRL-o im visual mode: one shot normal mode
+- zz: positioniert aktuelle Zeile in der Bildschirmmitte
+
+## Spellchecking
+- set (no)spell: Spellchek ein- / ausschalten
+- set spelllang=de: Sprache festlegen
+- ]s [s: Springt zu falschen Wörtern
+- z=: Liste mit Korrekturen anzeigen
+
+## Register
+Register können beliebigen Text enthalten, der später wiederverwendet werden kann. Es gibt u.a. folgende Register:
+
+- "0 bis "9
+  - "0: letzter yank
+  - "1 -"9: letzte gelöschten Texte > 1 Zeile
+- "-: letzter gelöschter Text < 1 Zeile
+- "a to "z or "A to "Z
+  - können beliebig vom User genutzt werden
+  - lowercase um Inhalt zu ersetzen
+  - uppercase um Inhalt anzufügen
+- ": : zuletzt ausgeführte Kommandozeile
+- ". : zuletzt eingefügter Text
+- "% : Name der geöffneten Datei
+- "*, "+: Die System-Clipboards
+- "/: Die letzte Suche
+
+
+Interaktion mit Registern:
+- "r: benutzt das Register r für das nächste Einfügen oder Löschen
+- CTRL-r im insert / command line mode: Einfügen aus Register
+
+## Macros
+- q
+- @
+
+## Quickfixlist
+- grep
+- quickfix list, cdo, ...
+- bufdo
+
+## Multiple files
+- buffer
+- tabs
+- panes
+- windows
+
+
+# Config
+- config files
+- key mappings
+- auto commands
+
+
+# Plugins
+- managers, plug, lazy, ...
+- examples: leap, surround
+- lsp, mason, etc
+- distros
