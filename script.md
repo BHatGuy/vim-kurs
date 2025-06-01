@@ -1,9 +1,7 @@
-
 # TODO
-- Aufgaben / Skript zu mitmachen
 - Zeiteinteilung
-- was ist vim
-  - TODO: kurze History
+- TODO: kurze History
+- nvim
 - TODO: Warnung Keyboard Layout
 
 
@@ -110,6 +108,8 @@ Hier nur ein paar Beispiele. Später kommen auch noch mehr dazu.
   - Optionen können mit no abgeschaltet werden
   - Optionen können mit ? ausgelesen werden
   - z.B.: spell, mouse, number
+- nor(mal): Führt die gegebenen Kommandos wie in normal mode aus
+- map: Erstellt eigene Keymappings
 
 
 # Navigation
@@ -190,6 +190,25 @@ Alle Sprünge werden in der jumplist aufgezeichnet:
 
 # Advanced Editing
 
+## Multiple files
+
+- buffer: geöffnete Datei, terminal, ...
+  - :e, :enew : neuer Buffer
+  - :bn, :bp : Navigation
+  - :ls, :buffers : listet Buffer
+  - :bdelete : schließt Buffer
+- window: Zeigt ein Buffer an
+  - <CTRL-w>s : horizontaler split
+  - <CTRL-w>v : vertikaler split
+  - <CTRL-w>(hjkl) : Navigation
+  - <CTRL-w>(HJKL) : Verschiebt das aktuelle Window
+  - <CTRL-w>r : rotiert Windows
+  - :q : schließt Window
+- tab page: Enthält Windows
+  - :tabe, :tabnew : neue tab page
+  - :tabn, :tabp, gt: Navigation
+  - :tabc : schließt aktuelle tab page
+
 ## Verschiedenes
 Verschiedene Operationen die ich häufiger benutze.
 
@@ -206,14 +225,17 @@ Verschiedene Operationen die ich häufiger benutze.
   - g CTRL-a: zählt visual mode mehrere Zahlen nacheinander
 - CTRL-o im visual mode: one shot normal mode
 - zz: positioniert aktuelle Zeile in der Bildschirmmitte
+- bufdo: führt ein Kommando für jeden offenen Buffer aus
 
 ## Spellchecking
+
 - set (no)spell: Spellchek ein- / ausschalten
 - set spelllang=de: Sprache festlegen
 - ]s [s: Springt zu falschen Wörtern
 - z=: Liste mit Korrekturen anzeigen
 
 ## Register
+
 Register können beliebigen Text enthalten, der später wiederverwendet werden kann. Es gibt u.a. folgende Register:
 
 - "0 bis "9
@@ -236,29 +258,39 @@ Interaktion mit Registern:
 - CTRL-r im insert / command line mode: Einfügen aus Register
 
 ## Macros
-- q
-- @
 
-## Quickfixlist
-- grep
-- quickfix list, cdo, ...
-- bufdo
+Mit Macros können eingaben aufgezeichnet und noch mal ausgeführt werden.
+Das ist zum Beispiel parktisch, um kompliziertere Bearbeitungen für viele Zeilen zu wiederholen.
 
-## Multiple files
-- buffer
-- tabs
-- panes
-- windows
+- qa: Zeichet Macro in Register a auf
+  - q: beendet Aufzeichnung
+- @a: Führt Macro in Register a aus
+  - @@: Führt letzten Macro noch einmal aus
+
+## Quickfix
+
+Vim kann Fehler oder ähnliches in einer Liste Sammeln. Man kann dann durch die Liste navigieren oder gesammelt Kommandos ausführen.
+
+- :make : Führt make aus und befüllt quickfix list mit Fehlern
+  - Programm und Errorformat können eingestellt werden
+- :grep : Sucht mit grep und befüllt die quickfix list
+  - vimgrep für internes grep
+- :cw : Öffnet ein Window mit der quickfix list
+- :cn : springt zum nächsten Eintrag
+- :cp : springt zum vorherigen Eintrag
+- :cdo : Führt Kommando für alle Einträge aus
+
 
 
 # Config
-- config files
-- key mappings
-- auto commands
+
+Vim kann persistent konfiguriert werden:
+- .vimrc
+- ~/.config/neovim/init.(vim|lua)
+
+In der Config stehen Kommandos für den command line mode. Es können zum Beispiel Optionen festgelegt oder Keymappings definiert werden.
 
 
 # Plugins
-- managers, plug, lazy, ...
-- examples: leap, surround
-- lsp, mason, etc
-- distros
+Es gibt eine Vielzahl von Pulugins für Vim und Neovim. Zum installieren empfiehlt sich ein Plugin Manager: plug (vim), lazy (nvim), ...
+Um direkt mit einer sinnvollen Konfiguration einsteigen zu können gibt es auch Distrtibutionen, die Plugins, Keymappings und Optionen voreingestellt haben: z.B. lazyvim oder lunarvim.
