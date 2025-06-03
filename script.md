@@ -70,24 +70,6 @@ Der Visual Mode wird zum Auswählen von Text benutzt.
 
 Auf den Ausgewählten Bereich können dann Operatoren angewendet werden.
 
-# Textobjekte
-
-Textobjekte werden im Visual Mode oder nach einem Operator benutzt um Objekt auszuwählen oder den Operator auf das Objekt anzuwenden.
-
-Eine Auswahl an Textobjekten ist (:h text-objects für ein längere liste):
-- w/W: Wort
-- s: Satz
-- p: Paragraph
-- ()[]{}<>: Verschiedene Klammern
-- "'`: Verschiedene Quotes
-- t: Tags (<a></a>)
-
-Ein a (around) vor dem Textobjekt wählt das Objekt mit Whitespace oder inklusive Klammern aus.
-Ein i (inner) vor dem Textobjekt wählt das Objekt ohne Whitespace oder nur den Teil in Klammern aus.
-
-Textobjekte können auch wie Kommandos wiederholt werden. Beispiel: d3w
-
-
 # Kommandos
 Der command line mode kann mit : geöffnet werden. Es gibt sehr viele Kommandos, unter anderem auch von Plugins.
 Hier nur ein paar Beispiele. Später kommen auch noch mehr dazu.
@@ -105,6 +87,45 @@ Hier nur ein paar Beispiele. Später kommen auch noch mehr dazu.
 - map: Erstellt eigene Keymappings
   - Vairanten für modi (n,v,i) und nicht-Rekursion (nore)
   - nnoremap <C-p> :
+
+# Suchen und Ersetzen (innerhalb eines Buffers)
+
+## Suchen
+- /: sucht vorwärts nach gegebenen Regex
+- ?: sucht rückwärts nach gegebenen Regex
+- *: sucht vorwärts nach dem Wort unterm Cursor
+  - im visual mode wird nach der ganze Auswahl gesucht
+- #: sucht rückwärts nach dem Wort unterm Cursor
+  - im visual mode wird nach der ganze Auswahl gesucht
+- n: wiederholt die letzte Suche
+- N: wiederholt die letzte Suche in die andere Richtung
+- :nohlsearch: Schaltet die Markierung der letzten Suche aus
+
+## Ersetzen
+
+- :%s/suche/ersetze(/gc...)
+  - % wählt den gesamten Buffer aus
+  - im visual mode kann in der Selektion ersetzt werden
+  - g: alle matches in einer Zeil
+  - c: jedes Ersetzen muss bestätigt werden
+
+
+# Textobjekte
+
+Textobjekte werden im Visual Mode oder nach einem Operator benutzt um Objekt auszuwählen oder den Operator auf das Objekt anzuwenden.
+
+Eine Auswahl an Textobjekten ist (:h text-objects für ein längere liste):
+- w/W: Wort
+- s: Satz
+- p: Paragraph
+- ()[]{}<>: Verschiedene Klammern
+- "'`: Verschiedene Quotes
+- t: Tags (<a></a>)
+
+Ein a (around) vor dem Textobjekt wählt das Objekt mit Whitespace oder inklusive Klammern aus.
+Ein i (inner) vor dem Textobjekt wählt das Objekt ohne Whitespace oder nur den Teil in Klammern aus.
+
+Textobjekte können auch wie Kommandos wiederholt werden. Beispiel: d3w
 
 
 # Navigation
@@ -161,27 +182,6 @@ Alle Sprünge werden in der jumplist aufgezeichnet:
 - CTRL-o: Springt zur vorherigen/älteren Position in den jumplist
 - CTRL-i: Springt zur nächsten/neueren Position in den jumplist
 - :ju : zeigt die jumplist an
-
-# Suchen und Ersetzen (innerhalb eines Buffers)
-
-## Suchen
-- /: sucht vorwärts nach gegebenen Regex
-- ?: sucht rückwärts nach gegebenen Regex
-- *: sucht vorwärts nach dem Wort unterm Cursor
-  - im visual mode wird nach der ganze Auswahl gesucht
-- #: sucht rückwärts nach dem Wort unterm Cursor
-  - im visual mode wird nach der ganze Auswahl gesucht
-- n: wiederholt die letzte Suche
-- N: wiederholt die letzte Suche in die andere Richtung
-- :nohlsearch: Schaltet die Markierung der letzten Suche aus
-
-## Ersetzen
-
-- :%s/suche/ersetze(/gc...)
-  - % wählt den gesamten Buffer aus
-  - im visual mode kann in der Selektion ersetzt werden
-  - g: alle matches in einer Zeil
-  - c: jedes Ersetzen muss bestätigt werden
 
 # Advanced Editing
 
@@ -285,5 +285,9 @@ In der Config stehen Kommandos für den command line mode. Es können zum Beispi
 
 
 # Plugins
-Es gibt eine Vielzahl von Pulugins für Vim und Neovim. Zum installieren empfiehlt sich ein Plugin Manager: plug (vim), lazy (nvim), ...
+Es gibt eine Vielzahl von Pulugins für Vim und Neovim. Zum installieren empfiehlt sich ein Plugin-Manager: plug (vim), lazy (nvim), ...
 Um direkt mit einer sinnvollen Konfiguration einsteigen zu können gibt es auch Distrtibutionen, die Plugins, Keymappings und Optionen voreingestellt haben: z.B. lazyvim oder lunarvim.
+
+# Misc
+- hardtime-vim: Blockt "ineffizientes" Navigieren
+- Mehr zu LazyVim: https://lazyvim-ambitious-devs.phillips.codes/
