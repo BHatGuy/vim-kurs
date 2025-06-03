@@ -1,10 +1,3 @@
-# TODO
-- Zeiteinteilung
-- TODO: kurze History
-- nvim
-- TODO: Warnung Keyboard Layout
-
-
 # Basics
 Navigation mit
 - h: links
@@ -110,11 +103,13 @@ Hier nur ein paar Beispiele. Später kommen auch noch mehr dazu.
   - z.B.: spell, mouse, number
 - nor(mal): Führt die gegebenen Kommandos wie in normal mode aus
 - map: Erstellt eigene Keymappings
+  - Vairanten für modi (n,v,i) und nicht-Rekursion (nore)
+  - nnoremap <C-p> :
 
 
 # Navigation
 
-## Word / Text object Motions
+## Word / text object Motions
 Es kann auch anhand von Textobjekten navigiert werden.
 Um zwischen Wörtern zu springen gibt es folgende Möglichkeiten:
 
@@ -152,7 +147,7 @@ Wie immer auch wiederholbar: 3w
 
 ## Marks
 
-Mit marks können Zeilen markiert werden, um zu ihnen springen zu können.
+Mit Marks können Zeilen markiert werden, um zu ihnen springen zu können.
 
 - m + (a-zA-Z): setzt einen mark in der aktuellen Zeile
   - a-z: kann nur aus der selben Datei angesprungen werden
@@ -279,8 +274,6 @@ Vim kann Fehler oder ähnliches in einer Liste Sammeln. Man kann dann durch die 
 - :cn : springt zum nächsten Eintrag
 - :cp : springt zum vorherigen Eintrag
 - :cdo : Führt Kommando für alle Einträge aus
-
-
 
 # Config
 
